@@ -1,0 +1,28 @@
+# Consultorio Dra. Zuly Álvarez Castro - Psicóloga
+Sitio web completo y funcional. Abrir `index.html` en el navegador (doble clic).
+
+## Cómo personalizar (5 minutos)
+1. Abre `js/config.js` y cambia:
+   - `whatsappConsultorio`: tu número real con código país, solo dígitos. Ej. "573001234567"
+   - `direccion`: dirección exacta del consultorio
+   - `lat` / `lng`: coordenadas de Google Maps (clic derecho en el mapa > copiar coordenadas)
+   - `email` y `siteUrl`: tu dominio final cuando lo publiques
+2. En `index.html` (líneas 13-15 y 24) reemplaza `https://dra-zuly-alvarez.example.com/assets/logo-oficial.jpg` por la URL pública de tu logo (1200x630px). Esto es obligatorio para que WhatsApp muestre la tarjeta de vista previa.
+3. Reemplaza `assets/logo.svg` por tu logo oficial si lo tienes. Guarda una copia como `assets/logo-oficial.jpg` y súbela a tu hosting.
+4. Foto de la Dra.: reemplaza el bloque con inicial "Z" en el Hero por `<img src="assets/perfil-dra-zuly.webp">`.
+
+## Funcionalidades incluidas
+- Agendamiento 3 pasos: servicio, modalidad Presencial/En Línea, fecha + slots mañana (8-12) / tarde (2-6), sábados solo mañana, domingos cerrado.
+- Validación: nombre, teléfono 10 dígitos, correo, motivo 10-300 caracteres.
+- Al confirmar: guarda en localStorage + abre WhatsApp del consultorio con resumen + modal con botones Google Calendar y .ics (con 2 alarmas: 24h y 2h antes).
+- Panel Médico: busca, exporta CSV, cancela/libera horario, botón "📱 Enviar Recordatorio por WhatsApp" por cada cita con mensaje pre-redactado + ubicación.
+- Botón flotante WhatsApp en toda la página.
+- Botones GPS: Google Maps (destination=dirección) + Waze (ll=lat,lng).
+- Open Graph para vista previa en WhatsApp.
+- Responsive, Tailwind CDN, olas y mariposas 🦋.
+
+## Publicar gratis
+Arrastra la carpeta `Consultorio` a Netlify Drop, Vercel o GitHub Pages. Luego actualiza `og:url` y `og:image` con tu URL real y vuelve a compartir en WhatsApp para ver la tarjeta.
+
+## Emergencias
+Footer incluye Línea 123, Línea 106 y Línea Nacional 01 8000 911 911. Ajusta según tu ciudad.

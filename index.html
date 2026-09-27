@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Zuly Álvarez Castro - Psicóloga | Agenda tu cita</title>
+  <meta name="description" content="Consultorio psicológico de la Dra. Zuly Álvarez Castro. Terapia individual, de pareja, adolescentes y teleconsulta en línea. Espacio seguro para sanar y transformarte." />
+
+  <!-- 4. META TAGS Open Graph para vista previa en WhatsApp -->
+  <meta property="og:title" content="Dra. Zuly Álvarez Castro - Psicóloga | Agenda tu cita" />
+  <meta property="og:description" content="Un espacio seguro para sanar, crecer y transformarte. Terapia individual, pareja, adolescentes y teleconsulta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dra-zuly-alvarez.example.com/" />
+  <meta property="og:image" content="https://dra-zuly-alvarez.example.com/assets/logo-oficial.jpg" />
+  <meta property="og:image:secure_url" content="https://dra-zuly-alvarez.example.com/assets/logo-oficial.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo oficial Dra. Zuly Álvarez Castro - Psicóloga" />
+  <meta property="og:locale" content="es_CO" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dra. Zuly Álvarez Castro - Psicóloga" />
+  <meta name="twitter:description" content="Agenda tu cita de psicología presencial o virtual." />
+  <meta name="twitter:image" content="https://dra-zuly-alvarez.example.com/assets/logo-oficial.jpg" />
+
+  <!-- Tipografías: elegante/cursiva para marca + limpia para cuerpo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Pinyon+Script&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            turquesa: { DEFAULT: '#2EB0C4', light: '#A5E6F0', dark: '#1E8FA3' },
+            mariposa: { DEFAULT: '#1A52A5', dark: '#123A78', light: '#E3EDFA' },
+            nube: '#F8FAFC'
+          },
+          fontFamily: {
+            cuerpo: ['Poppins', 'sans-serif'],
+            titulo: ['"Cormorant Garamond"', 'serif'],
+            firma: ['"Pinyon Script"', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+</head>
+
+<body class="font-cuerpo bg-white text-slate-800 antialiased">
+
+  <!-- HEADER & NAVEGACIÓN -->
+  <header id="header" class="fixed top-0 inset-x-0 z-40 bg-white/85 backdrop-blur-md border-b border-cyan-50 transition-shadow">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20" aria-label="Navegación principal">
+      <a href="#inicio" class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="Logo mariposa Dra. Zuly" class="w-10 h-10" />
+        <span class="leading-tight">
+          <span class="font-firma text-2xl text-mariposa block -mb-1">Dra. Zuly Álvarez Castro</span>
+          <span class="text-[11px] tracking-[0.22em] uppercase text-turquesa-dark font-semibold">Psicóloga</span>
+        </span>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="#inicio" class="hover:text-turquesa-dark">Inicio</a>
+        <a href="#perfil" class="hover:text-turquesa-dark">Perfil</a>
+        <a href="#servicios" class="hover:text-turquesa-dark">Servicios</a>
+        <a href="#agendar" class="hover:text-turquesa-dark">Agendar</a>
+        <a href="#ubicacion" class="hover:text-turquesa-dark">Ubicación</a>
+        <a href="#panel" class="hover:text-turquesa-dark">Panel Médico</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="#agendar" class="hidden sm:inline-flex bg-mariposa hover:bg-mariposa-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">Agendar Cita</a>
+        <button id="btn-menu" class="md:hidden p-2 rounded-lg hover:bg-nube" aria-label="Abrir menú">☰</button>
+      </div>
+    </nav>
+    <div id="menu-movil" class="hidden md:hidden border-t border-cyan-50 bg-white px-6 py-4 flex-col gap-3 text-sm font-medium">
+      <a href="#inicio" class="block py-1">Inicio</a>
+      <a href="#perfil" class="block py-1">Perfil</a>
+      <a href="#servicios" class="block py-1">Servicios</a>
+      <a href="#agendar" class="block py-1">Agendar</a>
+      <a href="#ubicacion" class="block py-1">Ubicación</a>
+      <a href="#panel" class="block py-1">Panel Médico</a>
+      <a href="#agendar" class="mt-2 inline-flex justify-center bg-mariposa text-white px-5 py-2.5 rounded-full">Agendar Cita</a>
+    </div>
+  </header>
+
+  <main id="inicio" class="pt-16 sm:pt-20">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-mariposa via-turquesa to-turquesa-light">
+      <div class="absolute inset-0 bg-white/80"></div>
+      <img src="assets/butterfly.svg" alt="" aria-hidden="true" class="butterfly-float absolute top-10 left-[8%] w-10 opacity-70" />
+      <img src="assets/butterfly.svg" alt="" aria-hidden="true" class="butterfly-float-delayed absolute top-32 right-[10%] w-14 opacity-60" />
+      <img src="assets/butterfly.svg" alt="" aria-hidden="true" class="butterfly-float absolute bottom-24 left-[45%] w-8 opacity-50" />
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 bg-white border border-cyan-100 text-mariposa text-xs font-semibold px-4 py-2 rounded-full shadow-sm">🦋 Espacio seguro · Confidencial · Empático</p>
+          <h1 class="font-titulo italic text-4xl sm:text-5xl lg:text-6xl text-mariposa-dark leading-tight mt-4">Un espacio seguro para <span class="text-turquesa-dark">sanar</span>, crecer y transformarte</h1>
+          <p class="mt-4 text-slate-600 text-base sm:text-lg">Soy la <strong>Dra. Zuly Álvarez Castro</strong>, psicóloga. Te acompaño con calidez profesional en terapia individual, de pareja, adolescentes y teleconsulta en línea.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#agendar" class="bg-mariposa hover:bg-mariposa-dark text-white font-semibold px-7 py-3 rounded-full shadow-lg shadow-blue-200 transition">Agendar Cita</a>
+            <a id="hero-wa" href="#" target="_blank" rel="noopener" class="bg-white border-2 border-turquesa text-turquesa-dark hover:bg-turquesa hover:text-white font-semibold px-7 py-3 rounded-full transition">Hablar por WhatsApp</a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2 text-xs">
+            <span class="bg-white/80 border px-3 py-1.5 rounded-full">✓ Presencial y En Línea</span>
+            <span class="bg-white/80 border px-3 py-1.5 rounded-full">✓ Confidencialidad garantizada</span>
+            <span class="bg-white/80 border px-3 py-1.5 rounded-full">✓ Primera orientación clara</span>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-white rounded-[2rem] shadow-2xl shadow-blue-100 p-6 sm:p-8 border border-cyan-50">
+            <div class="flex items-center gap-4">
+              <div class="w-20 h-20 rounded-full bg-gradient-to-br from-turquesa to-mariposa flex items-center justify-center text-white font-firma text-3xl">Z</div>
+              <div>
+                <p class="font-firma text-3xl text-mariposa">Dra. Zuly Álvarez Castro</p>
+                <p class="text-xs text-slate-500">Psicóloga · Tarjeta Profesional (pendiente N.º)</p>
+              </div>
+            </div>
+            <ul class="mt-5 space-y-2.5 text-sm text-slate-600">
+              <li>🦋 Enfoque humano y basado en evidencia</li>
+              <li>🔒 Secreto profesional - Ley 1090 de 2006</li>
+              <li>💻 Teleconsulta para toda Colombia</li>
+            </ul>
+            <a href="#agendar" class="mt-5 block text-center bg-turquesa hover:bg-turquesa-dark text-white font-semibold py-3 rounded-full transition">Reservar mi primera sesión</a>
+            <p class="text-center text-[11px] text-slate-400 mt-2">Respuesta por WhatsApp en horario de atención</p>
+          </div>
+        </div>
+      </div>
+      <!-- Ola divisoria -->
+      <div class="relative -mb-px"><svg viewBox="0 0 1440 90" class="w-full block" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C360,120 1080,0 1440,60 L1440,90 L0,90 Z" fill="#ffffff"/></svg></div>
+    </section>
+
+    <!-- PERFIL -->
+    <section id="perfil" class="bg-white py-14 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <p class="text-turquesa-dark font-semibold text-sm tracking-widest uppercase">Perfil profesional</p>
+          <h2 class="font-titulo italic text-3xl sm:text-4xl text-mariposa-dark mt-2">Acompañamiento que transforma</h2>
+          <p class="mt-4 text-slate-600">Acompaño procesos de ansiedad, depresión, duelo, autoestima, conflictos de pareja y adolescencia, con escucha sin juicios y plan terapéutico personalizado.</p>
+          <div class="mt-6 grid sm:grid-cols-3 gap-3">
+            <div class="bg-nube rounded-2xl p-4 border border-cyan-50"><p class="text-2xl">🤝</p><p class="font-semibold text-sm mt-1">Escucha sin juicio</p><p class="text-xs text-slate-500">Valido tu historia y tu ritmo.</p></div>
+            <div class="bg-nube rounded-2xl p-4 border border-cyan-50"><p class="text-2xl">🔒</p><p class="font-semibold text-sm mt-1">Confidencialidad</p><p class="text-xs text-slate-500">Todo lo hablado queda en consulta.</p></div>
+            <div class="bg-nube rounded-2xl p-4 border border-cyan-50"><p class="text-2xl">🦋</p><p class="font-semibold text-sm mt-1">Cambio real</p><p class="text-xs text-slate-500">Herramientas para tu día a día.</p></div>
+          </div>
+          <p class="font-firma text-3xl text-turquesa-dark mt-6">“Sanar es un proceso, no tienes que hacerlo sola/o”</p>
+        </div>
+        <div class="reveal bg-gradient-to-br from-mariposa-light to-white rounded-[2rem] border p-6 sm:p-8">
+          <h3 class="font-semibold text-mariposa-dark">Enfoque terapéutico</h3>
+          <ul class="mt-3 text-sm text-slate-600 space-y-2 list-disc pl-5">
+            <li>Primera sesión de valoración y objetivos.</li>
+            <li>Sesiones de 50-60 min según servicio.</li>
+            <li>Modalidad presencial o teleconsulta por videollamada.</li>
+            <li>Seguimiento y material de apoyo entre sesiones.</li>
+          </ul>
+          <div class="mt-4 text-xs bg-amber-50 border border-amber-200 rounded-xl p-3">⚠️ Si estás en crisis, ve al footer: líneas de emergencia. Este sitio no reemplaza atención inmediata.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="bg-nube py-14 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <p class="text-center text-turquesa-dark font-semibold text-sm tracking-widest uppercase">Servicios</p>
+        <h2 class="text-center font-titulo italic text-3xl sm:text-4xl text-mariposa-dark mt-2">¿Cómo puedo ayudarte?</h2>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article class="service-card bg-white rounded-3xl p-6 border border-cyan-50 shadow-xl shadow-cyan-100/50">
+            <p class="text-3xl">🧠</p><h3 class="font-semibold text-lg mt-2 text-mariposa-dark">Terapia Individual</h3>
+            <p class="text-sm text-slate-500 mt-1">Ansiedad, depresión, duelo, autoestima. 50 min.</p>
+            <button data-service="Terapia Individual" class="btn-reservar mt-4 w-full bg-mariposa text-white py-2.5 rounded-full text-sm font-semibold hover:bg-mariposa-dark">Reservar este servicio</button>
+          </article>
+          <article class="service-card bg-white rounded-3xl p-6 border border-cyan-50 shadow-xl shadow-cyan-100/50">
+            <p class="text-3xl">💑</p><h3 class="font-semibold text-lg mt-2 text-mariposa-dark">Terapia de Pareja</h3>
+            <p class="text-sm text-slate-500 mt-1">Comunicación y vínculo. 60 min.</p>
+            <button data-service="Terapia de Pareja" class="btn-reservar mt-4 w-full bg-mariposa text-white py-2.5 rounded-full text-sm font-semibold hover:bg-mariposa-dark">Reservar este servicio</button>
+          </article>
+          <article class="service-card bg-white rounded-3xl p-6 border border-cyan-50 shadow-xl shadow-cyan-100/50">
+            <p class="text-3xl">🌱</p><h3 class="font-semibold text-lg mt-2 text-mariposa-dark">Adolescentes</h3>
+            <p class="text-sm text-slate-500 mt-1">Emociones, autoestima, familia. 50 min + consentimiento.</p>
+            <button data-service="Terapia Adolescentes" class="btn-reservar mt-4 w-full bg-mariposa text-white py-2.5 rounded-full text-sm font-semibold hover:bg-mariposa-dark">Reservar este servicio</button>
+          </article>
+          <article class="service-card bg-white rounded-3xl p-6 border border-cyan-50 shadow-xl shadow-cyan-100/50 ring-2 ring-turquesa/30">
+            <p class="text-3xl">💻</p><h3 class="font-semibold text-lg mt-2 text-mariposa-dark">Teleconsulta En Línea</h3>
+            <p class="text-sm text-slate-500 mt-1">Videollamada segura. 50 min.</p>
+            <button data-service="Teleconsulta en línea" data-modality="En Línea" class="btn-reservar mt-4 w-full bg-turquesa text-white py-2.5 rounded-full text-sm font-semibold hover:bg-turquesa-dark">Reservar en línea</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDAMIENTO -->
+    <section id="agendar" class="bg-white py-14 sm:py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <p class="text-center text-turquesa-dark font-semibold text-sm tracking-widest uppercase">Agendamiento</p>
+        <h2 class="text-center font-titulo italic text-3xl sm:text-4xl text-mariposa-dark mt-2">Reserva tu cita en 3 pasos</h2>
+        <p class="text-center text-sm text-slate-500 mt-2">Lun–Vie 8am–12m y 2pm–6pm · Sáb 8am–12m · Dom cerrado</p>
+
+        <div class="mt-8 bg-nube border border-cyan-100 rounded-[1.8rem] p-5 sm:p-8 shadow-xl shadow-cyan-100/40">
+          <!-- Paso 1 -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="sel-servicio" class="font-semibold text-sm">1. Servicio</label>
+              <select id="sel-servicio" class="mt-1 w-full border rounded-xl px-4 py-3 bg-white focus:ring-2 focus:ring-turquesa outline-none">
+                <option>Terapia Individual</option>
+                <option>Terapia de Pareja</option>
+                <option>Terapia Adolescentes</option>
+                <option>Teleconsulta en línea</option>
+              </select>
+            </div>
+            <div>
+              <span class="font-semibold text-sm">Modalidad</span>
+              <div class="mt-1 grid grid-cols-2 gap-2">
+                <label class="cursor-pointer"><input type="radio" name="modalidad" value="Presencial" checked class="peer sr-only" /><span class="block text-center text-sm border rounded-xl py-3 bg-white peer-checked:bg-mariposa peer-checked:text-white peer-checked:border-mariposa">🏢 Presencial</span></label>
+                <label class="cursor-pointer"><input type="radio" name="modalidad" value="En Línea" class="peer sr-only" /><span class="block text-center text-sm border rounded-xl py-3 bg-white peer-checked:bg-mariposa peer-checked:text-white peer-checked:border-mariposa">💻 En Línea</span></label>
+              </div>
+            </div>
+          </div>
+          <!-- Paso 2 -->
+          <div class="mt-5 grid sm:grid-cols-[220px_1fr] gap-4">
+            <div>
+              <label for="inp-fecha" class="font-semibold text-sm">2. Fecha</label>
+              <input id="inp-fecha" type="date" class="mt-1 w-full border rounded-xl px-4 py-3 bg-white focus:ring-2 focus:ring-turquesa outline-none" />
+              <p id="fecha-aviso" class="text-xs text-slate-500 mt-1"></p>
+            </div>
+            <div>
+              <span class="font-semibold text-sm">Horario disponible</span>
+              <p class="text-xs text-slate-500">Mañana y tarde. Los ocupados se bloquean automáticamente.</p>
+              <div class="mt-2">
+                <p class="text-[11px] font-semibold text-turquesa-dark uppercase">Mañana</p>
+                <div id="slots-manana" class="mt-1 flex flex-wrap gap-2"></div>
+                <p class="text-[11px] font-semibold text-turquesa-dark uppercase mt-3">Tarde</p>
+                <div id="slots-tarde" class="mt-1 flex flex-wrap gap-2"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Paso 3 -->
+          <div class="mt-5 bg-white border rounded-2xl p-4 sm:p-6">
+            <p class="font-semibold text-sm">3. Tus datos</p>
+            <div class="mt-3 grid sm:grid-cols-2 gap-3">
+              <div><label class="text-xs font-medium" for="inp-nombre">Nombre completo *</label><input id="inp-nombre" class="mt-1 w-full border rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-turquesa outline-none" placeholder="Ej. María Pérez" /><p class="err text-xs text-red-600 hidden" id="err-nombre"></p></div>
+              <div><label class="text-xs font-medium" for="inp-telefono">Teléfono / WhatsApp (10 dígitos) *</label><input id="inp-telefono" inputmode="numeric" class="mt-1 w-full border rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-turquesa outline-none" placeholder="Ej. 3001234567" /><p class="err text-xs text-red-600 hidden" id="err-telefono"></p></div>
+              <div><label class="text-xs font-medium" for="inp-correo">Correo *</label><input id="inp-correo" type="email" class="mt-1 w-full border rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-turquesa outline-none" placeholder="tucorreo@email.com" /><p class="err text-xs text-red-600 hidden" id="err-correo"></p></div>
+              <div><label class="text-xs font-medium" for="inp-motivo">Motivo breve (10-300 caracteres) *</label><textarea id="inp-motivo" rows="2" class="mt-1 w-full border rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-turquesa outline-none" placeholder="Cuéntame brevemente el motivo, sin detalles muy sensibles"></textarea><p class="err text-xs text-red-600 hidden" id="err-motivo"></p></div>
+            </div>
+            <div id="resumen-cita" class="hidden mt-4 text-sm bg-mariposa-light/50 border border-blue-100 rounded-xl p-3"></div>
+            <button id="btn-confirmar" class="mt-4 w-full bg-mariposa hover:bg-mariposa-dark text-white font-semibold py-3.5 rounded-full transition">Confirmar y enviar por WhatsApp</button>
+            <p class="text-[11px] text-slate-400 text-center mt-2">Al confirmar se guarda localmente y te redirige al WhatsApp del consultorio con el resumen. También podrás añadirla a tu calendario.</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative mt-10 -mb-14"><svg viewBox="0 0 1440 90" class="w-full block" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C360,120 1080,0 1440,60 L1440,90 L0,90 Z" fill="#F8FAFC"/></svg></div>
+    </section>
+
+    <!-- UBICACIÓN + GPS -->
+    <section id="ubicacion" class="bg-nube py-14 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <p class="text-turquesa-dark font-semibold text-sm tracking-widest uppercase">Ubicación</p>
+          <h2 class="font-titulo italic text-3xl sm:text-4xl text-mariposa-dark mt-2">Cómo llegar al consultorio</h2>
+          <p id="direccion-texto" class="mt-3 text-slate-600 text-sm">Calle 123 #45-67, Bogotá, Colombia</p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a id="btn-maps" href="#" target="_blank" rel="noopener" class="bg-mariposa text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-mariposa-dark">📍 Cómo llegar con Google Maps</a>
+            <a id="btn-waze" href="#" target="_blank" rel="noopener" class="bg-turquesa text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-turquesa-dark">🚗 Abrir en Waze</a>
+          </div>
+          <div class="mt-4 text-xs text-slate-500 bg-white border rounded-xl p-3">Si vienes a teleconsulta, recibirás el enlace de videollamada por WhatsApp tras confirmar.</div>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden border shadow-xl">
+          <iframe id="mapa-embed" title="Mapa del consultorio" class="w-full h-72 sm:h-80" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=4.7110,-74.0721&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL MÉDICO -->
+    <section id="panel" class="bg-white py-14 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <p class="text-turquesa-dark font-semibold text-sm tracking-widest uppercase">Panel Médico · Dra. Zuly</p>
+        <h2 class="font-titulo italic text-3xl sm:text-4xl text-mariposa-dark mt-2">Citas agendadas</h2>
+        <p class="text-sm text-slate-500 mt-1">Guardado local en este dispositivo (localStorage). Usa el botón 📱 para enviar recordatorio al paciente.</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <input id="panel-buscar" placeholder="Buscar por nombre, servicio, fecha..." class="border rounded-full px-5 py-2.5 text-sm w-full sm:w-80 focus:ring-2 focus:ring-turquesa outline-none" />
+          <button id="panel-exportar" class="text-sm border px-5 py-2.5 rounded-full hover:bg-nube">⬇ Exportar CSV</button>
+          <button id="panel-limpiar" class="text-sm border border-red-200 text-red-600 px-5 py-2.5 rounded-full hover:bg-red-50">Borrar todo</button>
+        </div>
+        <div id="panel-lista" class="mt-5 grid gap-3"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-mariposa-dark text-blue-100 pt-12 pb-24 sm:pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-8 text-sm">
+      <div>
+        <p class="font-firma text-3xl text-white">Dra. Zuly Álvarez Castro</p>
+        <p class="text-blue-200 text-xs tracking-widest uppercase">Psicóloga · Consultorio</p>
+        <p class="mt-3 text-blue-100/80">© <span id="year"></span> Todos los derechos reservados. Contenido confidencial y con secreto profesional (Ley 1090 de 2006, Colombia).</p>
+      </div>
+      <div>
+        <p class="font-semibold text-white">Contacto</p>
+        <ul class="mt-2 space-y-1 text-blue-100/90">
+          <li>📱 WhatsApp: <span id="footer-wa">+57 300 123 4567</span></li>
+          <li>✉️ <span id="footer-mail">contacto@drazuly.example.com</span></li>
+          <li>📍 <span id="footer-dir">Calle 123 #45-67, Bogotá</span></li>
+          <li>🕒 Lun–Vie 8–12 y 2–6 · Sáb 8–12</li>
+        </ul>
+      </div>
+      <div class="bg-red-900/40 border border-red-300/30 rounded-2xl p-4">
+        <p class="font-semibold text-white">🆘 Línea de emergencias en crisis</p>
+        <p class="mt-1 text-blue-100/90 text-xs">Este sitio no sustituye atención inmediata. Si tú o alguien está en riesgo:</p>
+        <ul class="mt-2 text-sm font-semibold">
+          <li>🇨🇴 Línea 123 (emergencias) · Línea 106 (apoyo emocional Bogotá)</li>
+          <li>📞 Línea Nacional Salud Mental: 01 8000 911 911</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL CONFIRMACIÓN -->
+  <div id="modal" class="hidden fixed inset-0 z-50 bg-mariposa-dark/60 backdrop-blur-sm items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <p class="font-firma text-3xl text-mariposa text-center">¡Cita agendada! 🦋</p>
+      <div id="modal-detalle" class="mt-4 text-sm bg-nube border rounded-2xl p-4"></div>
+      <div class="mt-4 grid gap-2">
+        <a id="btn-gcal" href="#" target="_blank" rel="noopener" class="text-center bg-mariposa text-white font-semibold py-3 rounded-full hover:bg-mariposa-dark">📅 Añadir a Google Calendar</a>
+        <button id="btn-ics" class="bg-white border-2 border-turquesa text-turquesa-dark font-semibold py-3 rounded-full hover:bg-turquesa hover:text-white">🍎 Descargar .ics (Apple/Outlook) · 2 alarmas</button>
+        <a id="btn-wa-confirm" href="#" target="_blank" rel="noopener" class="text-center bg-[#25D366] text-white font-semibold py-3 rounded-full">💬 Abrir WhatsApp del consultorio</a>
+        <button id="btn-cerrar-modal" class="text-sm text-slate-500 hover:text-slate-800 py-1">Cerrar y ver mis citas abajo</button>
+      </div>
+      <p class="text-[11px] text-slate-400 text-center mt-2">El .ics incluye recordatorios 24h y 2h antes + dirección y enlace de navegación.</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="hidden fixed bottom-24 right-4 sm:right-6 z-50 bg-mariposa-dark text-white text-sm px-5 py-3 rounded-2xl shadow-xl max-w-xs"></div>
+
+  <!-- 2. BOTÓN FLOTANTE WHATSAPP visible en todas las páginas -->
+  <a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp"
+     class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] shadow-xl flex items-center justify-center hover:scale-110 transition">
+    <svg viewBox="0 0 32 32" class="w-8 h-8 fill-white"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.8c1.8 1 3.9 1.6 6.3 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.5 1 1-4.4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C4.6 9.1 9.6 4.5 16 4.5S27.4 9.1 27.4 15 22.4 24.8 16 24.8zm5.9-7.4c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-.9-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6L14.3 9c-.1-.3-.4-.3-.6-.3h-.5c-.2 0-.5.2-.7.5-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+  </a>
+
+  <!-- JS modular (clásico para funcionar con file:// sin servidor) -->
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/links.js"></script>
+  <script src="js/maps.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
