@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", function(){
   var header = document.getElementById("header");
   window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY>10); });
   var btnMenu = document.getElementById("btn-menu"), menuM = document.getElementById("menu-movil");
-  btnMenu.addEventListener("click", function(){ menuM.classList.toggle("hidden"); menuM.classList.toggle("flex"); });
-  menuM.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ menuM.classList.add("hidden"); menuM.classList.remove("flex"); }); });
+  btnMenu.addEventListener("click", function(){
+    var open = menuM.classList.contains("hidden");
+    menuM.classList.toggle("hidden"); menuM.classList.toggle("flex");
+    btnMenu.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  menuM.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ menuM.classList.add("hidden"); menuM.classList.remove("flex"); btnMenu.setAttribute("aria-expanded","false"); }); });
 
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); } }); }, {threshold:.12});
   document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
@@ -31,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
         var r = document.querySelector('input[name="modalidad"][value="'+b.dataset.modality+'"]');
         if(r) r.checked = true;
       }
-      document.getElementById("agendar").scrollIntoView({behavior:"smooth"});
+      if(typeof window.showView === "function"){ window.showView("agendar"); }
+      else { document.getElementById("agendar").scrollIntoView({behavior:"smooth"}); }
       showToast("Servicio seleccionado: "+b.dataset.service);
     });
   });
@@ -51,9 +56,14 @@ document.addEventListener("DOMContentLoaded", function(){
       motivo: document.getElementById("inp-motivo").value
     };
     if(!validateForm(data)) return;
+    var chk = document.getElementById("chk-habeas");
+    var errH = document.getElementById("err-habeas");
+    if(chk && !chk.checked){ if(errH) errH.classList.remove("hidden"); showToast("Debes aceptar el tratamiento de datos (Habeas Data)."); return; }
+    else if(errH){ errH.classList.add("hidden"); }
     if(isSlotTaken(data.fecha, data.hora)){ showToast("Ese horario ya fue ocupado. Elige otro."); renderSlots(); return; }
 
-    var cita = Object.assign({id: makeId(), estado:"confirmada", createdAt: new Date().toISOString()}, data);
+    var medioSel = (typeof getMedioPago === "function") ? getMedioPago() : "";
+    var cita = Object.assign({id: makeId(), estado:"confirmada", createdAt: new Date().toISOString(), medioPago: medioSel}, data);
     saveAppointment(cita);
     openModal(cita);
     renderAdminPanel(document.getElementById("panel-buscar").value);

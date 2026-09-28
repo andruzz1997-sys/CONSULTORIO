@@ -7,6 +7,18 @@ var CONFIG = {
   lng: "-74.0721",
   email: "contacto@drazuly.example.com",
   siteUrl: "https://dra-zuly-alvarez.example.com/",
+  // Módulo de pagos (reemplaza con datos reales, sin tocar claves)
+  pagos: {
+    nequi: "300 000 0000",
+    daviplata: "300 000 0000",
+    transfiya: "al número del consultorio",
+    pagoOnlineUrl: "https://link-wompi-o-mercadopago.example.com/pagar",
+    valorSesion: "$ ___ (a convenir)"
+  },
+  // Acceso profesional (solo disuasorio front-end; para datos sensibles usar backend)
+  admin: { usuario: "dra.zuly", clave: "Zuly2026*" },
+  // Asistente IA: deja listo el hook para API generativa futura
+  ai: { endpoint: "", apiKey: "" },
   duracionPorServicio: {
     "Terapia Individual": 50,
     "Terapia de Pareja": 60,
